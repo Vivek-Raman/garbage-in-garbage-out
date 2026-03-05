@@ -4,13 +4,10 @@ from typing import List, Optional
 
 class TreeNode:
 
-  def __init__(self, arr: List[int]) -> None:
-    tree = from_level_order(arr)
-    self.val = tree.val
-    self.left = tree.left
-    self.right = tree.right
-
-  def __init__(self, val=0, left=None, right=None):
+  def __init__(self,
+               val=0,
+               left: Optional[TreeNode] = None,
+               right: Optional[TreeNode] = None):
     self.val = val
     self.left = left
     self.right = right
@@ -56,11 +53,11 @@ def to_level_order(root: TreeNode) -> List[int]:
   return arr
 
 
-if __name__ == '__main__':
-  arr = [5, 3, 6, 2, 4, None, 7]
-  test_tree = from_level_order(arr)
-  arr = to_level_order(test_tree)
-  print('Run 1: ', arr)
-  test_tree = from_level_order(arr)
-  arr = to_level_order(test_tree)
-  print('Run 2: ', arr)
+# if __name__ == '__main__':
+#   arr = [5, 3, 6, 2, 4, None, 7]
+#   test_tree = from_level_order(arr)
+#   arr = to_level_order(test_tree)
+#   print('Run 1: ', arr)
+#   test_tree = from_level_order(arr)
+#   arr = to_level_order(test_tree)
+#   print('Run 2: ', arr)

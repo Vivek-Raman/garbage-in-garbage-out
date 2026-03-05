@@ -1,16 +1,5 @@
-# Definition for a binary tree node.
 from typing import Optional
-
-
-class TreeNode:
-
-  def __init__(self, val=0, left=None, right=None):
-    self.val = val
-    self.left = left
-    self.right = right
-
-    def __str__(self) -> str:
-      return f"{self.val},{str(self.left)},{str(self.right)}"
+from utils.tree import TreeNode, from_level_order
 
 
 class Solution:
@@ -28,6 +17,5 @@ class Solution:
 
 
 if __name__ == "__main__":
-  s = Solution().searchBST(
-      TreeNode(4, TreeNode(2, TreeNode(1), TreeNode(3)), TreeNode(7)), 2)
+  s = Solution().searchBST(from_level_order([5, 3, 6, 2, 4, None, 7], 2))
   print(s)
