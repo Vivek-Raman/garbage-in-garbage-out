@@ -4,6 +4,9 @@ import sys
 
 
 def main():
+  subprocess.run(["git", "restore", "--staged", "."], check=True)
+  subprocess.run(["git", "add", f"leetcode/"], check=True)
+
   result = subprocess.run(
       ["git", "status", "--porcelain"],
       capture_output=True,
@@ -35,8 +38,6 @@ def main():
   problem_name = first_line[2:].strip()
   filename = filepath.split("/")[-1]
 
-  subprocess.run(["git", "restore", "--staged", "."], check=True)
-  subprocess.run(["git", "add", f"leetcode/{filename}"], check=True)
   subprocess.run(["git", "commit", "-m", problem_name], check=True)
 
 

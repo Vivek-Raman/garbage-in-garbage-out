@@ -4,7 +4,7 @@ print("Example: 6767. Title goes Here")
 problem_name = input(" > ").strip()
 
 split = problem_name.split(' ')
-number_part = split[0].rstrip('.')
+number_part = split[0].rstrip('.').zfill(4)
 words = [w.lower() for w in split[1:]]
 
 target_name = number_part + '-' + '-'.join(words)
