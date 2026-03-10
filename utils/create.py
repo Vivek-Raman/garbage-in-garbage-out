@@ -13,6 +13,7 @@ print(f"Creating file: {target_file}")
 
 template = f"""
 # {problem_name}
+
 class Solution:
   pass
 

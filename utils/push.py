@@ -23,14 +23,14 @@ def main():
       staged_leetcode.append(path)
 
   if len(staged_leetcode) != 1:
-    sys.exit(1)
+    sys.exit("Expected exactly one staged leetcode file.")
 
   filepath = staged_leetcode[0]
   with open(filepath) as f:
     first_line = f.readline().strip()
 
   if not first_line.startswith("# ") or len(first_line) < 3:
-    sys.exit(1)
+    sys.exit("First line must be a problem title starting with '# '.")
 
   problem_name = first_line[2:].strip()
   filename = filepath.split("/")[-1]
